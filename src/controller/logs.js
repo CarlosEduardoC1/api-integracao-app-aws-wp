@@ -7,7 +7,7 @@ exports.save = async (req, res, next) => {
 }
 
 exports.get = async (req, res, next) => {
-    const busca = await connect.get('/log/save-archive', req.body, { headers: req.headers })
+    const busca = await connect.get('/log/get-archive', req.body, { headers: req.headers })
         .then(response => { return res.status(200).json(response.data); })
         .catch(error => { return res.status(400).json(error) });
 }
